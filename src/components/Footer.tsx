@@ -77,25 +77,26 @@ export const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-secondary" />
                 <a
-                  href="tel:7132340030"
+                  href="tel:4047214112"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
-                  (713) 234-0030
+                  404-721-4112
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-secondary" />
                 <a
-                  href="mailto:info@awelawfirm.com"
+                  href="mailto:Info@awelawfirm.com"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
-                  info@awelawfirm.com
+                  Info@awelawfirm.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-secondary mt-1" />
                 <span className="text-primary-foreground/70">
-                  Houston, Texas
+                  3495 Buckhead Loop NE Suite 18777<br />
+                  Atlanta, GA 31126
                 </span>
               </li>
             </ul>

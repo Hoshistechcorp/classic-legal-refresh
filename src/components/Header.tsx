@@ -21,7 +21,7 @@ export const Header = () => {
         <div className="container flex items-center justify-between py-2">
           <div className="flex items-center gap-2 text-primary-foreground/80 text-sm">
             <Phone className="h-4 w-4" />
-            <span>(713) 234-0030</span>
+            <span>404-721-4112</span>
           </div>
           <div className="hidden md:block text-primary-foreground/80 text-sm">
             Advocacy • Winning • Excellence

@@ -12,19 +12,19 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "(713) 234-0030",
-    href: "tel:7132340030",
+    content: "404-721-4112",
+    href: "tel:4047214112",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "info@awelawfirm.com",
-    href: "mailto:info@awelawfirm.com",
+    content: "Info@awelawfirm.com",
+    href: "mailto:Info@awelawfirm.com",
   },
   {
     icon: MapPin,
     title: "Location",
-    content: "Houston, Texas",
+    content: "3495 Buckhead Loop NE Suite 18777, Atlanta, GA 31126",
     href: null,
   },
   {

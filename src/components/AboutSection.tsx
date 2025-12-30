@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import attorneyImage from "@/assets/attorney.png";
 
 const features = [
   "Personalized attention to every case",
@@ -14,7 +15,20 @@ export const AboutSection = () => {
     <section className="py-24 bg-background">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
+          {/* Left Column - Image */}
+          <div className="relative">
+            <div className="relative">
+              <img
+                src={attorneyImage}
+                alt="Attorney Mayowa Jasmine Awe - Founding Attorney at Awe Law Firm"
+                className="w-full shadow-lg"
+              />
+              {/* Decorative Element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-secondary -z-10" />
+            </div>
+          </div>
+
+          {/* Right Column - Content */}
           <div>
             <p className="text-secondary font-semibold tracking-wide uppercase mb-4">
               About Our Firm
@@ -52,28 +66,6 @@ export const AboutSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
-
-          {/* Right Column - Image/Card */}
-          <div className="relative">
-            <div className="bg-primary p-12 shadow-lg">
-              <blockquote className="text-primary-foreground">
-                <p className="text-xl font-serif italic leading-relaxed mb-6">
-                  "Dedication and a family feel is what gives our clients the
-                  confidence to sit back and expect results."
-                </p>
-                <footer>
-                  <p className="font-semibold text-secondary">
-                    Mayowa Jasmine Awe
-                  </p>
-                  <p className="text-primary-foreground/70 text-sm">
-                    Founding Attorney
-                  </p>
-                </footer>
-              </blockquote>
-            </div>
-            {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-secondary -z-10" />
           </div>
         </div>
       </div>
