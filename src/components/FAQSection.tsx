@@ -4,6 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
 
 const faqs = [
   {
@@ -69,11 +71,16 @@ const faqs = [
 ];
 
 export const FAQSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className={cn(
+          "text-center max-w-2xl mx-auto mb-16 transition-all duration-700",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <p className="text-secondary font-semibold tracking-wide uppercase mb-4">
             Common Questions
           </p>
@@ -87,7 +94,10 @@ export const FAQSection = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto">
+        <div className={cn(
+          "max-w-4xl mx-auto transition-all duration-700 delay-200",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <div className="grid gap-8">
             {faqs.map((category) => (
               <div key={category.category}>
