@@ -88,7 +88,7 @@ export const Header = () => {
               className="font-semibold tracking-wide"
               asChild
             >
-              <Link to="/contact">Schedule Consultation</Link>
+              <a href="https://calendly.com/mya-awelawfirm/30min" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
             </Button>
           </div>
 
@@ -126,7 +126,7 @@ export const Header = () => {
                   className="w-full font-semibold"
                   asChild
                 >
-                  <Link to="/contact">Schedule Consultation</Link>
+                  <a href="https://calendly.com/mya-awelawfirm/30min" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
                 </Button>
               </div>
             </div>

@@ -65,10 +65,10 @@ export const HeroSection = () => {
               className="text-base font-semibold"
               asChild
             >
-              <Link to="/contact">
+              <a href="https://calendly.com/mya-awelawfirm/30min" target="_blank" rel="noopener noreferrer">
                 Schedule a Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <Button
               size="lg"
