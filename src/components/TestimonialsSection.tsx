@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -27,11 +29,16 @@ const testimonials = [
 ];
 
 export const TestimonialsSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
-    <section className="py-24 bg-primary">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-primary">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className={cn(
+          "text-center max-w-2xl mx-auto mb-16 transition-all duration-700",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <p className="text-secondary font-semibold tracking-wide uppercase mb-4">
             Client Reviews
           </p>
@@ -49,7 +56,11 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-primary-foreground/5 border border-primary-foreground/10 p-8"
+              className={cn(
+                "bg-primary-foreground/5 border border-primary-foreground/10 p-8 transition-all duration-500",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: isVisible ? `${200 + index * 100}ms` : "0ms" }}
             >
               <Quote className="h-10 w-10 text-secondary/30 mb-4" />
 

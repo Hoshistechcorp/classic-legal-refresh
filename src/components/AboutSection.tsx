@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
 import attorneyImage from "@/assets/attorney.png";
 
 const features = [
@@ -11,12 +13,17 @@ const features = [
 ];
 
 export const AboutSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image */}
-          <div className="relative">
+          <div className={cn(
+            "relative transition-all duration-700",
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+          )}>
             <div className="relative">
               <img
                 src={attorneyImage}
@@ -29,7 +36,10 @@ export const AboutSection = () => {
           </div>
 
           {/* Right Column - Content */}
-          <div>
+          <div className={cn(
+            "transition-all duration-700 delay-200",
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+          )}>
             <p className="text-secondary font-semibold tracking-wide uppercase mb-4">
               About Our Firm
             </p>

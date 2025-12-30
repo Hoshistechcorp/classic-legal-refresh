@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home, Users, Briefcase, Wine, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
 
 const practiceAreas = [
   {
@@ -30,11 +32,16 @@ const practiceAreas = [
 ];
 
 export const PracticeAreasSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
-    <section className="py-24 bg-muted">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className={cn(
+          "text-center max-w-2xl mx-auto mb-16 transition-all duration-700",
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}>
           <p className="text-secondary font-semibold tracking-wide uppercase mb-4">
             What We Do
           </p>
@@ -50,10 +57,14 @@ export const PracticeAreasSection = () => {
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {practiceAreas.map((area) => (
+          {practiceAreas.map((area, index) => (
             <div
               key={area.title}
-              className="bg-card p-8 shadow-sm hover:shadow-md transition-shadow group"
+              className={cn(
+                "bg-card p-8 shadow-sm hover:shadow-md transition-all duration-500 group",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: isVisible ? `${200 + index * 100}ms` : "0ms" }}
             >
               <div className="w-14 h-14 bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
                 <area.icon className="h-7 w-7 text-secondary" />
