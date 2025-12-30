@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Phone, Scale } from "lucide-react";
+import { Menu, X, Phone, Scale, Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Practice Areas", href: "/practice-areas" },
+  { name: "Blog", href: "/blog" },
   { name: "Reviews", href: "/reviews" },
   { name: "Contact", href: "/contact" },
+];
+
+const socialLinks = [
+  { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
+  { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+  { name: "YouTube", icon: Youtube, href: "https://youtube.com" },
 ];
 
 export const Header = () => {
@@ -23,8 +32,22 @@ export const Header = () => {
             <Phone className="h-4 w-4" />
             <span>404-721-4112</span>
           </div>
-          <div className="hidden md:block text-primary-foreground/80 text-sm">
-            Advocacy • Winning • Excellence
+          <div className="hidden md:flex items-center gap-4">
+            <span className="text-primary-foreground/80 text-sm">Advocacy • Winning • Excellence</span>
+            <div className="flex items-center gap-3 ml-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
