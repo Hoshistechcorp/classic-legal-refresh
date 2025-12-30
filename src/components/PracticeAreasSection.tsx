@@ -1,51 +1,31 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  Scale,
-  Users,
-  FileText,
-  Shield,
-  Briefcase,
-  Home,
-  ArrowRight,
-} from "lucide-react";
+import { Home, Users, Briefcase, Wine, ArrowRight } from "lucide-react";
 
 const practiceAreas = [
+  {
+    icon: Home,
+    title: "Closings",
+    description:
+      "Comprehensive real estate closing services ensuring smooth property transactions from contract to keys.",
+  },
   {
     icon: Users,
     title: "Family Law",
     description:
-      "Divorce, child custody, child support, adoption, and other family matters.",
-  },
-  {
-    icon: Shield,
-    title: "Criminal Defense",
-    description:
-      "Aggressive defense for misdemeanors, felonies, and federal charges.",
+      "Compassionate representation for divorce, custody, child support, and all family legal matters.",
   },
   {
     icon: Briefcase,
     title: "Personal Injury",
     description:
-      "Compensation for accidents, negligence, and wrongful injuries.",
+      "Aggressive advocacy for accident victims to secure maximum compensation for your injuries.",
   },
   {
-    icon: FileText,
-    title: "Estate Planning",
+    icon: Wine,
+    title: "Alcohol Licensing",
     description:
-      "Wills, trusts, power of attorney, and asset protection strategies.",
-  },
-  {
-    icon: Home,
-    title: "Real Estate",
-    description:
-      "Property transactions, disputes, closings, and title issues.",
-  },
-  {
-    icon: Scale,
-    title: "Civil Litigation",
-    description:
-      "Contract disputes, business conflicts, and civil court representation.",
+      "Expert guidance through Georgia's alcohol licensing process for restaurants, bars, and retailers.",
   },
 ];
 
@@ -62,14 +42,14 @@ export const PracticeAreasSection = () => {
             Our Practice Areas
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            We provide comprehensive legal services across multiple practice
+            We provide comprehensive legal services across our core practice
             areas, ensuring you receive expert representation for your specific
-            legal needs.
+            legal needs in the Atlanta metropolitan area.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {practiceAreas.map((area) => (
             <div
               key={area.title}
