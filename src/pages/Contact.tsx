@@ -207,6 +207,28 @@ const Contact = () => {
             </div>
           </div>
         </section>
+
+        {/* Map Section */}
+        <section className="bg-muted py-16">
+          <div className="container">
+            <h2 className="font-serif text-2xl font-semibold text-foreground mb-6 text-center">
+              Our Location
+            </h2>
+            <div className="aspect-[16/9] md:aspect-[21/9] w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5!2d-84.35!3d33.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f50f5b5b5b5b5b%3A0x0!2s3495%20Buckhead%20Loop%20NE%2C%20Atlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Awe Law Firm Office Location - 3495 Buckhead Loop NE, Atlanta, GA"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
