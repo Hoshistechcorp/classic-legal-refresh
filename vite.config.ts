@@ -15,5 +15,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/classic-legal-refresh/',
+  base: '/',
+  // base: '/classic-legal-refresh/',
 }));
