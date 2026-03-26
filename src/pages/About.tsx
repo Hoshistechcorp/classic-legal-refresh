@@ -103,7 +103,7 @@ const About = () => {
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
                     <span className="text-primary-foreground">
-                      Licensed in Texas
+                      Licensed in Georgia
                     </span>
                   </li>
                 </ul>
